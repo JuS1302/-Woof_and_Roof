@@ -1,46 +1,28 @@
+<div class="container">
+  <div class="row">
+    <% @offers.each do |offer| %>
+      <div class="col-4">
+        <div class="card-trip">
+          <%= link_to offers_path do %>
 
-
-
-<h1>test home</h1>
-
-<div class="container cards card-trip">
-  <% @offers.each do |offer| %>
-    <%= link_to offers_path do %>
-      <% if offer.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path offer.photo.key %>)">
-      <% else %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png" %>)">
-      <% end %>
-        <%= offer.title %>
+            <div
+              class="card-trip-image"
+              style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+              <%= offer.photo.attached? ? cl_image_path(offer.photo.key) : image_path("pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png") %>)">
+            </div>
+            <div class="card-trip-infos">
+              <div class="card-trip-details">
+                <h2><%= offer.title %></h2>
+                <p><%= offer.description %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= offer.price %></h2>
+              <img
+                src="https://kitt.lewagon.com/placeholder/users/krokrob"
+                class="card-trip-user avatar-bordered" />
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
-  <% end %>
-<div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
-
-</div>
-
-
-<%# <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
-</div> %>
-
-
-<%# <%= cl_image_path offer.photo.key %>
-
-
