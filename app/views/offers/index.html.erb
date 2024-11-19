@@ -1,46 +1,5 @@
 
-  <!--Nav-bar-->
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pt-0">
-  <div class="container-fluid">
-    <a class="navbar-brand " href="#">
-      <img src="https://www.1min30.com/wp-content/uploads/2018/02/Couleur-logo-Airbnb.jpg" />
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-          <div class=search-bar>
-            <%= form_with url: "/search", method: :get do |form| %>
-             <%= form.label :query, "Destination:" %>
-             <%= form.search_field :query, class: "search-bar destination", placeholder:"Rechercher une destination"%>
-             <%= form.label :query, "Arrivee:" %>
-             <%= form.search_field :query, class: "search-bar quand", placeholder:"Quand?" %>
-             <%= form.label :query, "Depart:" %>
-             <%= form.search_field :query, class: "search-bar quand", placeholder: "Quand?"  %>
-             <%= form.label :query, "Voyageurs:"%>
-             <%= form.search_field :query, class: "search-bar voyageur", placeholder: "Rajouter des voyageurs"%>
-             <%= form.submit "Search" , class: "btn bg_color rounded-pill px-4" %>
-             <% end %>
-           </div>
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-
-
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://c7.alamy.com/compfr/2bhaedt/icone-de-connexion-isolee-sur-l-illustration-abstraite-du-bouton-rond-bleu-special-2bhaedt.jpg" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Log in</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
-    </div>
-  </div>
-</div>
-<!--Nav-bar-->
 
 <h1>test home</h1>
 
@@ -85,29 +44,3 @@
 <%# <%= cl_image_path offer.photo.key %>
 
 
-<footer class="footer">
-  <footer class="footer">
-  <div class="social-links">
-    <a href="https://facebook.com" target="_blank" title="Facebook">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-           alt="Facebook"
-           class="social-icon">
-    </a>
-    <a href="https://instagram.com" target="_blank" title="Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-           alt="Instagram"
-           class="social-icon">
-    </a>
-    <a href="https://x.com" target="_blank" title="X">
-      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png"
-           alt="X"
-           class="social-icon">
-    </a>
-  </div>
-  <div class="footer-links">
-    <a href="/dashboard">Dashboard</a>
-    <a href="/sign_in">Sign In</a>
-    <a href="/annonces">Annonces</a>
-  </div>
-  <p>&copy; <%= Time.now.year %> Woof & Roof</p>
-  </footer>
