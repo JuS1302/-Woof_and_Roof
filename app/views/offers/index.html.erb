@@ -1,5 +1,19 @@
 <h1>test home</h1>
-<h2>my contribution</h2>
-<h3> This is better</h3>
 
 
+<div class="container card-container">
+  <% @offers.each do |offer| %>
+    <%= link_to offers_path do %>
+      <% if offer.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path "pose-chenil.jpg" %>)">
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png" %>)">
+      <% end %>
+        <%= offer.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<%# <%= cl_image_path offer.photo.key %>
