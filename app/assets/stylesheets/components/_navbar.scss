@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height : 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,34 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.search-bar {
+  border-radius: 50px; /* Rounded edges for the container */
+  background-color: #ffffff;
+  height: 40px;    /* Adjust the height of the field */
+
+
+}
+
+.destination {
+  width: 250px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.quand {
+  width: 85px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.voyageur {
+  width: 210px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.bg_color {
+  background-color: #E28490;
 }
