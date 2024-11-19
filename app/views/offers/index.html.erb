@@ -1,3 +1,4 @@
+
   <!--Nav-bar-->
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon pt-0">
   <div class="container-fluid">
@@ -40,3 +41,73 @@
   </div>
 </div>
 <!--Nav-bar-->
+
+<h1>test home</h1>
+
+<div class="container cards card-trip">
+  <% @offers.each do |offer| %>
+    <%= link_to offers_path do %>
+      <% if offer.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path offer.photo.key %>)">
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png" %>)">
+      <% end %>
+        <%= offer.title %>
+      </div>
+    <% end %>
+  <% end %>
+<div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+</div>
+
+
+<%# <div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div> %>
+
+
+<%# <%= cl_image_path offer.photo.key %>
+
+
+<footer class="footer">
+  <footer class="footer">
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank" title="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+           alt="Facebook"
+           class="social-icon">
+    </a>
+    <a href="https://instagram.com" target="_blank" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+           alt="Instagram"
+           class="social-icon">
+    </a>
+    <a href="https://x.com" target="_blank" title="X">
+      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png"
+           alt="X"
+           class="social-icon">
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/sign_in">Sign In</a>
+    <a href="/annonces">Annonces</a>
+  </div>
+  <p>&copy; <%= Time.now.year %> Woof & Roof</p>
+  </footer>
