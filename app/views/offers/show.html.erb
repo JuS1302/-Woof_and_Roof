@@ -31,3 +31,31 @@
     </p>
   </div>
 </div>
+
+
+  <!-- Le module de réservation sticky -->
+  <div class="sticky-booking-container">
+    <div class="sticky-booking">
+      <h3 class="sticky-booking-title"><%= @offer.price %>€ / nuit</h3>
+
+      <div class="booking-fields">
+        <div class="booking-field">
+          <label for="arrival-date">Arrivée</label>
+          <%= date_field_tag :arrival, nil, class: "form-control", id: "arrival-date" %>
+        </div>
+        <div class="booking-field">
+          <label for="departure-date">Départ</label>
+          <%= date_field_tag :departure, nil, class: "form-control", id: "departure-date" %>
+        </div>
+        <div class="booking-field">
+          <label for="guests">Voyageurs</label>
+          <%= number_field_tag :guests, 1, min: 1, class: "form-control", id: "guests" %>
+        </div>
+      </div>
+
+      <div class="booking-actions">
+        <%= button_to "Réserver", new_offer_booking_path(@offer), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
