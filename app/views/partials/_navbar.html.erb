@@ -1,9 +1,9 @@
 <!--Nav-bar-->
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon pt-0">
   <div class="container-fluid">
-    <a class="navbar-brand " href="#">
-      <img src="https://www.1min30.com/wp-content/uploads/2018/02/Couleur-logo-Airbnb.jpg" />
-    </a>
+    <%= link_to offers_path, class: "navbar-brand" do %>
+    <img src="https://www.1min30.com/wp-content/uploads/2018/02/Couleur-logo-Airbnb.jpg" alt="Airbnb Logo" />
+  <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,13 +25,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-
-
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/>
             <i class="fa-solid fa-circle-user"></i>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Log in</a>
+              <a class="dropdown-item" href="#"><%= link_to "Log in", new_user_session_path %></a>
             </div>
           </li>
           <!--li class="nav-item"-->
