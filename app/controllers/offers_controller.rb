@@ -16,9 +16,9 @@ class OffersController < ApplicationController
       end
   end
 
-def show
+  def show
   @offer = Offer.find(params[:id])
-end
+  end
 
   private
 

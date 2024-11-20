@@ -6,7 +6,7 @@
 <div class="container cards card-trip">
   <% @offers.each do |offer| %>
     <%= link_to offers_path do %>
-      <% if offer.photo.attached? %>
+      <% if offer.photos.any? %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path offer.photo.key %>)">
       <% else %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png" %>)">
@@ -42,5 +42,3 @@
 
 
 <%# <%= cl_image_path offer.photo.key %>
-
-
