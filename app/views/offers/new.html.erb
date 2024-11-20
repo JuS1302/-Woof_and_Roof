@@ -1,9 +1,14 @@
-<h1>test de nouvelle annonce</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "nid-cigognes"%>);">
+  <div class="container">
+    <h1>Woof & Roof</h1>
+    <p>Plus qu'un logement, une expérience.</p>
+    <%= link_to "Proposer un logement", new_offer_path, class: "btn btn-ghost" %>
+  </div>
+</div>
 
-
-<!-- app/views/articles/_form.html.erb -->
+<%# <!-- app/views/articles/_form.html.erb -->
 <%= simple_form_for(article) do |f| %>
   <!-- [...] -->
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <!-- [...] -->
-<% end %>
+<%# <% end %>
