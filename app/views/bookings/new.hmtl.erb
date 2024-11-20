@@ -1,0 +1,25 @@
+<!-- app/views/bookings/new.html.erb -->
+<div class="container">
+  <h1>Réserver l'offre : <%= @offer.title %></h1>
+
+  <%= form_with(model: [@offer, @booking], local: true) do |form| %>
+    <div class="form-group">
+      <%= form.label :arrival, "Date d'arrivée" %>
+      <%= form.date_field :arrival, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :departure, "Date de départ" %>
+      <%= form.date_field :departure, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :guests, "Nombre de voyageurs" %>
+      <%= form.number_field :guests, min: 1, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit "Réserver", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
