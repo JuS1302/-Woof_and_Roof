@@ -19,8 +19,8 @@
   </div>
   <div class="footer-links">
     <a href="/dashboard">Dashboard</a>
-    <a href="/sign_in">Sign In</a>
-    <a href="/annonces">Annonces</a>
+    <a href="/sign_in"><%= link_to "Sign in", new_user_session_path %></a>
+    <a href="/annonces"><%= link_to "Annonces", offers_path %></a>
   </div>
   <p>&copy; <%= Time.now.year %> Woof & Roof</p>
   </footer>
