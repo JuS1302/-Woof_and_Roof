@@ -6,9 +6,13 @@
   </div>
 </div>
 
-<%# <!-- app/views/articles/_form.html.erb -->
-<%= simple_form_for(article) do |f| %>
-  <!-- [...] -->
-  <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <!-- [...] -->
-<%# <% end %>
+
+<%= simple_form_for(offer) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+
+<% end %>
