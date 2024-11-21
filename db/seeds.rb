@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Offer.destroy_all
-Booking.destroy_all
 User.destroy_all
+Booking.destroy_all
 
 puts "seed creation"
 
