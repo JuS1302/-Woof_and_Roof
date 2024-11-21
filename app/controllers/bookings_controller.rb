@@ -4,15 +4,18 @@ class BookingsController < ApplicationController
   before_action :set_offer, only: [:new, :create]
 
   def new
-    @booking = @offer.bookings.new
+    @offer = Offer.find(params[:offer_id])
+    @booking = Booking.new
   end
 
   def create
-    @booking = @offer.bookings.new(booking_params)
-    @booking.user = current_user # L'utilisateur qui fait la réservation (si vous utilisez Devise)
-
-    if @booking.save
-      redirect_to @offer, notice: "Réservation réussie !"
+    @offer = Offer.find(params[:offer_id])
+    @booking = Booking.new(booking_params)
+    @user = current_user
+    @booking.user = current_user
+    @booking.offer = @offer
+    if @booking.save!
+      redirect_to offer_path(@offer), notice: "Réservation réussie !"
     else
       render :new
     end
@@ -25,6 +28,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:arrival, :departure, :guests)
+    params.require(:booking).permit(:occurs_on, :end_on)
   end
 end
