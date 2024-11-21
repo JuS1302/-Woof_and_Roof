@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :offers do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index] # Par exemple, pour voir toutes les réservations
 
   devise_for :users
   root to: "offers#index"
