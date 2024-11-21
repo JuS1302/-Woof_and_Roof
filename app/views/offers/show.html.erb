@@ -1,39 +1,39 @@
 <div class="container">
-  <h1 class="page-title"> <%= @offer.title %> </h1>
+  <!-- Titre Principal -->
+  <h1 class="page-title"><%= @offer.title %></h1>
 
+  <!-- Galerie d'images -->
   <div class="gallery-container">
     <div class="main-image">
       <%= image_tag "chenil.jpg", class: "main-image" %>
-
     </div>
 
     <div class="mini-cards">
       <div class="mini-card">
-        <%= image_tag "chenil-la-poursuite-chien-traineau-30008.avif", class: "main-image" %>
+        <%= image_tag "chenil-la-poursuite-chien-traineau-30008.avif", class: "mini-card-image" %>
       </div>
       <div class="mini-card">
-          <%= image_tag "chenil4.jpg", class: "main-image" %>
+        <%= image_tag "chenil4.jpg", class: "mini-card-image" %>
       </div>
       <div class="mini-card">
-         <%= image_tag "chenil2.jpg", class: "main-image" %>
+        <%= image_tag "chenil2.jpg", class: "mini-card-image" %>
       </div>
       <div class="mini-card">
-         <%= image_tag "chenil3.jpg", class: "main-image" %>
+        <%= image_tag "chenil3.jpg", class: "mini-card-image" %>
       </div>
     </div>
   </div>
 
+  <!-- Description de l'offre -->
   <div class="description-container">
-    <h3 class="section-title"> <%= @offer.title + ", " + @offer.address %> </h3>
-    <p class="section-paragraph">
+    <h3 class="section-title"><%= @offer.title + ", " + @offer.address %></h3>
     <h4>Description</h4>
-    <%= @offer.description %>
+    <p class="section-paragraph">
+      <%= @offer.description %>
     </p>
   </div>
-</div>
 
-
-  <!-- Le module de réservation sticky -->
+  <!-- Module de réservation -->
   <div class="sticky-booking-container">
     <div class="sticky-booking">
       <h3 class="sticky-booking-title"><%= @offer.price %>€ / nuit</h3>
@@ -58,4 +58,9 @@
       </div>
     </div>
   </div>
-</div>
+
+  <!-- Section de localisation -->
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
