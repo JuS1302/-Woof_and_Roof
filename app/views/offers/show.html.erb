@@ -3,38 +3,33 @@
 
   <div class="gallery-container">
     <div class="main-image">
-      <%= image_tag "chenil.jpg", class: "main-image" %>
-
+      <%= cl_image_tag @offer.photos.first.key, class: "main-image" %>
     </div>
 
     <div class="mini-cards">
+      <% @offer.photos.drop(1).each do |photo| %>
       <div class="mini-card">
-        <%= image_tag "chenil-la-poursuite-chien-traineau-30008.avif", class: "main-image" %>
+        <%= cl_image_tag photo.key, class: "main-image" %>
       </div>
-      <div class="mini-card">
-          <%= image_tag "chenil4.jpg", class: "main-image" %>
-      </div>
-      <div class="mini-card">
-         <%= image_tag "chenil2.jpg", class: "main-image" %>
-      </div>
-      <div class="mini-card">
-         <%= image_tag "chenil3.jpg", class: "main-image" %>
-      </div>
+        <% end %>
     </div>
   </div>
 
-  <div class="description-container">
+<div class="row">
+
+
+  <div class="description-container col-8">
     <h3 class="section-title"> <%= @offer.title + ", " + @offer.address %> </h3>
     <p class="section-paragraph">
     <h4>Description</h4>
     <%= @offer.description %>
     </p>
   </div>
-</div>
+
 
 
   <!-- Le module de réservation sticky -->
-  <div class="sticky-booking-container">
+  <div class="sticky-booking-container col-4 mb-5">
     <div class="sticky-booking">
       <h3 class="sticky-booking-title"><%= @offer.price %>€ / nuit</h3>
 
@@ -58,4 +53,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
