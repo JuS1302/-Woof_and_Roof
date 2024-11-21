@@ -35,5 +35,15 @@ chenil.save
 file_path = Rails.root.join('app', 'assets', 'images', 'chenil4.jpg').open
 chenil.photos.attach(io: file_path, filename: "chenil4.jpg", content_type: "image/jpg")
 chenil.save
+file_path = Rails.root.join('app', 'assets', 'images', 'chenil-la-poursuite-chien-traineau-30008.jpg').open
+chenil.photos.attach(io: file_path, filename: "chenil-la-poursuite-chien-traineau-30008.jpg", content_type: "image/jpg")
+chenil.save
+file_path = Rails.root.join('app', 'assets', 'images', 'chenil3.jpg').open
+chenil.photos.attach(io: file_path, filename: "chenil3.jpg", content_type: "image/jpg")
+chenil.save
+file_path = Rails.root.join('app', 'assets', 'images', 'chenil2.jpg').open
+chenil.photos.attach(io: file_path, filename: "chenil2.jpg", content_type: "image/jpg")
+chenil.save
+
 
 puts "seed termination"
