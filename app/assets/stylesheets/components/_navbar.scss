@@ -29,6 +29,15 @@
   box-shadow: none;
 }
 
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030; /* Assurez-vous que la navbar est au-dessus des autres éléments */
+  background-color: white; /* Si nécessaire, ajustez la couleur */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : ajoutez un léger ombrage */
+  transition: all 0.3s ease-in-out;
+}
+
 button.btn-danger {
   background-color: #317497;
   border: none;
@@ -37,4 +46,3 @@ button.btn-danger {
 button.btn-danger:hover {
   background-color: #1c455c;
 }
-
