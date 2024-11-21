@@ -1,4 +1,4 @@
-<div class="banner mb-10" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "nid-cigognes.jpg"%>); background-position: center top;">
+<div class="banner mb-10" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "nid-cigognes.jpg"%>);">
   <div class="container">
     <h1>Woof & Roof</h1>
     <p>Plus qu'un logement, une expérience.</p>
@@ -14,7 +14,7 @@
           <%= link_to offer_path(offer) do %>
             <div
             class="card-trip-image"
-            style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('<%= offer.photos.any? ? cl_image_path(offer.photos.first.key) : asset_path('pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png') %>')">
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('<%= offer.photos.any? ? cl_image_path(offer.photos.first.key) : asset_path('pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png') %>')">
             </div>
             <div class="card-trip-infos">
               <div class="card-trip-details">
