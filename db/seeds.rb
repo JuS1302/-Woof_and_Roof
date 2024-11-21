@@ -29,19 +29,19 @@ anemone = Offer.create!(title: "Anémone du poisson pas drôle", description: "S
 
 
 
-file_path = Rails.root.join('assets', 'images', 'chenil.jpg').open
+file_path = File.open('app/assets/images/chenil.jpg')
 chenil.photos.attach(io: file_path, filename: "chenil.jpg", content_type: "image/jpg")
 chenil.save
-file_path = Rails.root.join('assets', 'images', 'chenil4.jpg').open
+file_path = File.open('app/assets/images/chenil4.jpg')
 chenil.photos.attach(io: file_path, filename: "chenil4.jpg", content_type: "image/jpg")
 chenil.save
-file_path = Rails.root.join('assets', 'images', 'chenil-la-poursuite-chien-traineau-30008.avif').open
+file_path = File.open('app/assets/images/chenil-la-poursuite-chien-traineau-30008.avif')
 chenil.photos.attach(io: file_path, filename: "chenil-la-poursuite-chien-traineau-30008.jpg", content_type: "image/avif")
 chenil.save
-file_path = Rails.root.join('assets', 'images', 'chenil3.jpg').open
+file_path = File.open('app/assets/images/chenil3.jpg')
 chenil.photos.attach(io: file_path, filename: "chenil3.jpg", content_type: "image/jpg")
 chenil.save
-file_path = Rails.root.join('assets', 'images', 'chenil2.jpg').open
+file_path = File.open('app/assets/images/chenil2.jpg')
 chenil.photos.attach(io: file_path, filename: "chenil2.jpg", content_type: "image/jpg")
 chenil.save
 
