@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :offers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
-    end
+  end
 
 
   devise_for :users
