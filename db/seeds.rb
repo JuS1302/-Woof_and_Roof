@@ -81,4 +81,29 @@ anemone_photo.each do |anemone_path|
   anemone.save
 end
 
+file_path = File.open("app/assets/images/caniche.jpg")
+  Bernard_Caniche.avatar.attach(io: file_path, filename: "caniche.jpg", content_type: "image/jpg")
+  Bernard_Caniche.save
+
+  file_path = File.open("app/assets/images/cochon.jpeg")
+  Eric_Caillard.avatar.attach(io: file_path, filename: "cochon.jpeg", content_type: "image/jpg")
+  Eric_Caillard.save
+
+  file_path = File.open("app/assets/images/castor.jpeg")
+  Pere_Castor.avatar.attach(io: file_path, filename: "castor.jpeg", content_type: "image/jpg")
+  Pere_Castor.save
+
+  file_path = File.open("app/assets/images/chauve.jpeg")
+  Souris_Volante.avatar.attach(io: file_path, filename: "chauve.jpeg", content_type: "image/jpg")
+  Souris_Volante.save
+
+  file_path = File.open("app/assets/images/ours.jpeg")
+  Papa_Ours.avatar.attach(io: file_path, filename: "ours.jpeg", content_type: "image/jpg")
+  Papa_Ours.save
+
+  file_path = File.open("app/assets/images/poisson.jpeg")
+  Poisson_pas_drôle.avatar.attach(io: file_path, filename: "poisson.jpeg", content_type: "image/jpg")
+  Poisson_pas_drôle.save
+
+
 puts "seed termination"
