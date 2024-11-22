@@ -36,11 +36,13 @@
       </div>
     </div>
 
+
+
     <!-- Icône utilisateur à droite -->
     <% if user_signed_in? %>
       <div class="ms-3">
         <div class="dropdown">
-          <img class="avatar dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src="https://via.placeholder.com/40" alt="User Avatar" style="height: 40px; border-radius: 50%; cursor: pointer;">
+          <img class="avatar dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" src="<%= current_user && current_user.avatar.attached? ? cl_image_path(current_user.avatar.key) : Cloudinary::Utils.cloudinary_url('pngtree-a-otter-on-tire-with-green-background-png-image_13046574_dgx7ou') %>" alt="User Avatar" style="height: 40px; border-radius: 50%; cursor: pointer;">
           <ul class="dropdown-menu dropdown-menu-end">
             <li><%= link_to "Mon Profil", edit_user_registration_path, class: "dropdown-item"%></li>
             <li><%= link_to "Mon Dashboard", users_dashboard_path, class: "dropdown-item"%></li>
