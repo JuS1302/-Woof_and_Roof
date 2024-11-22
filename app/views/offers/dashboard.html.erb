@@ -1,0 +1,63 @@
+
+<div class="container mt-5 mb-10">
+
+<h1 class="my-5">Bienvenue @user.email</h1>
+
+  <h1>Vos annonces</h1>
+  <div class="row mt-5">
+    <% @offers.each do |offer| %>
+      <div class="col-4">
+        <div class="card-trip mb-4">
+          <%= link_to offer_path(offer) do %>
+            <div
+            class="card-trip-image"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('<%= offer.photos.any? ? cl_image_path(offer.photos.first.key) : asset_path('pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png') %>')">
+            </div>
+            <div class="card-trip-infos">
+              <div class="card-trip-details">
+                <h2 class="text-dark"><%= offer.title %></h2>
+                <p><%= offer.address %></p>
+              </div>
+              <h2 class="card-trip-pricing text-dark"><%= offer.price %>€</h2>
+              <img
+                src="https://kitt.lewagon.com/placeholder/users/krokrob"
+                class="card-trip-user avatar-bordered" />
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container mt-5 mb-10">
+  <h1>Vos réservations à venir</h1>
+
+
+<div class="row mt-5 mb-3">
+    <% @bookings.each do |booking| %>
+      <div class="col-4">
+        <div class="card-trip mb-4">
+          <%= link_to offers_path do %>
+            <div
+            class="card-trip-image"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('<%= booking.offer.photos.any? ? cl_image_path(booking.offer.photos.first.key) : asset_path('pngtree-a-otter-on-tire-with-green-background-png-image_13046574.png') %>')">
+            </div>
+            <div class="card-trip-infos">
+              <div class="card-trip-details">
+                <h2 class="text-dark"><%= booking.offer.title %></h2>
+                <p><%= booking.offer.address %></p>
+              </div>
+              
+              <h2 class="card-trip-pricing text-dark"><%= booking.offer.price %>€</h2>
+              <img
+                src="https://kitt.lewagon.com/placeholder/users/krokrob"
+                class="card-trip-user avatar-bordered" />
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>

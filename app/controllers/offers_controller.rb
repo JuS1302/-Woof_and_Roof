@@ -23,7 +23,11 @@ class OffersController < ApplicationController
     @markers = [{ lat: @offer.latitude, lng: @offer.longitude }]
   end
 
-
+  def dashboard
+    @user = current_user
+    @offers = Offer.where(user_id: current_user.id)
+    @bookings = Booking.where(user_id: current_user.id)
+  end
 
   private
 
