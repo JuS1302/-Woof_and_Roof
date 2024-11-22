@@ -1,8 +1,12 @@
  <div class="container mt-5 mb-10">
 
-  <h1 class="my-5">Bienvenue <%= @user.email %></h1>
+  <h1 class="my-5">Bienvenue <%= @user.email %> !</h1>
 
-  <h1>Vos annonces</h1>
+  <p class="mb-5"> Ton dashboard te permet de gérer tes annonces publiées. Tu peux les modifier à ta guise et les suppirmer si besoin. Tu pourras également consulter ici les réservations que tu as effectuées et consulter l'annonce afin d'en savoir un peu plus sur ton séjour à venir. N'hésite pas à contacter l'hôte pour avoir plus d'informations. </p>
+  <div class = "d-flex justify-content-between">
+  <h1>Mes annonces</h1>
+    <%= link_to "Ajouter une annonce", new_offer_path, class: "text-center btn button_general", style: "width: auto;" %>
+  </div>
   <hr class="custom-line">
   <div class="row mt-5">
     <% @offers.each do |offer| %>
@@ -32,7 +36,7 @@
 
 
 <div class="container mt-5 mb-10">
-  <h1>Vos réservations à venir</h1>
+  <h1>Mes réservations à venir</h1>
   <hr class="custom-line">
   <div class="row mt-5 mb-3">
     <% @bookings.each do |booking| %>
