@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   def index
     @offers = Offer.all
+    @offers = Offer.search_by_title_and_description_and_address(params[:query]) if params[:query]
   end
 
   def new
