@@ -23,8 +23,8 @@
               </div>
               <h2 class="card-trip-pricing text-dark"><%= offer.price %>€</h2>
               <img
-                src="https://kitt.lewagon.com/placeholder/users/krokrob"
-                class="card-trip-user avatar-bordered" />
+                src="<%= offer.user.avatar.attached? ? cl_image_path(offer.user.avatar.key) : Cloudinary::Utils.cloudinary_url('pngtree-a-otter-on-tire-with-green-background-png-image_13046574_dgx7ou') %>"
+                class="card-trip-user avatar-bordered"/>
             </div>
           <% end %>
         </div>
