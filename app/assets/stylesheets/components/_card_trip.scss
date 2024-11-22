@@ -51,3 +51,10 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+.custom-line {
+  border: 1px solid #4a4a4a; /* Grey color for the line */
+  margin-top: 10px; /* Adjust spacing above the line */
+  margin-bottom: 20px; /* Adjust spacing below the line */
+  width: 100%; /* Make the line span the container */
+}
