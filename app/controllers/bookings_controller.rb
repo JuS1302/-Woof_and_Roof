@@ -21,6 +21,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    redirect_to users_dashboard_path, notice: "Réservation supprimée !" if @booking.destroy
+  end
+
   private
 
   def set_offer
