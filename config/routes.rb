@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :offers, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:destroy]
 
   devise_for :users
   root to: "offers#index"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "/users/dashboard", to: "offers#dashboard"
+
 
 
   # Defines the root path route ("/")
